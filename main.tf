@@ -8,6 +8,16 @@ locals {
      key = "tfstatefile"
    }
  }
+data "aws_security_group" "mysg0"{
+  filter {
+    name = "vpc-id"
+    values = [var.vpc_id]
+  }
+  filter {
+    name = "group-name"
+    values = ["mysg0"]
+  }
+ }
  resource "aws_instance" "myinstance" {
    ami = var.ami_id
      instance_type = var.instance_type
