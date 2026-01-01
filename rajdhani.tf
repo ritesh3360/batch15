@@ -1,3 +1,10 @@
+terraform {
+  backend "s3" {
+    bucket = "batch3360"
+    region = "us-east-1"
+    key = "tfstatefile"
+  }
+}
 provider "aws" {
     region = "us-east-1" 
 }
@@ -12,3 +19,4 @@ resource "aws_instance" "myinstance" {
     }
   
 }
+
