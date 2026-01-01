@@ -7,6 +7,3 @@ variable "instance_type" {
 variable "key_name" {
   default = "id_dsp."
 }
- variable "vpc_id" {
-   default = "vpc-00d7f48dd05818b0b"
- }
