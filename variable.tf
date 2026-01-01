@@ -7,3 +7,8 @@ variable "instance_type" {
 variable "key_name" {
   default = "id_dsp."
 }
+variable "vpc_id" {
+  description = "VPC ID where security group exists"
+  type        = string
+  default     = "vpc-0abc123456789xyz"
+}
