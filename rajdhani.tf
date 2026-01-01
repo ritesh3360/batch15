@@ -1,3 +1,6 @@
+locals {
+  instance_name = "my-instance"
+}
 terraform {
   backend "s3" {
     bucket = "batch3360"
@@ -15,9 +18,21 @@ resource "aws_instance" "myinstance" {
     key_name = var.key_name
     availability_zone = "us-east-1a"
     tags = {
-      Name ="myinstance"
+      Name = local.instance_name
     }
 }
+
+data "aws_security_group" "mysg0" {
+  filter {
+    name = "vpc_id"
+    values = [var.vpc_id]
+  } 
+  filter {
+    name = "group-name"
+    values = ["mysg0"]
+  }
+}
+
 
 variable "ami_id" {
   default = "ami-0c398cb65a93047f2"
@@ -28,6 +43,9 @@ variable "instance_type" {
 variable "key_name" {
   default = "id_dsp."
 }
+ variable "vpc_id" {
+   default = "vpc-00d7f48dd05818b0b"
+ }
 output "instance_public_ip" {
   value = aws_instance.myinstance.public_ip_address
 }
