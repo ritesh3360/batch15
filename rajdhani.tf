@@ -28,4 +28,11 @@ default = "t3.micro"
 variable "key_name" {
   default = "id_dsp.pem"
 }
+output "instance_id" {
+  value = aws_instance.myinstance.ip
+}
+output "instance_id" {
+  value = aws_instance.myinstance.id
+}
+
 
