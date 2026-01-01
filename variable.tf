@@ -10,5 +10,5 @@ variable "key_name" {
 variable "vpc_id" {
   description = "VPC ID where security group exists"
   type        = string
-  default     = "vpc-0abc123456789xyz"
+  default     = "vpc-09f537271c999c3c7"
 }
