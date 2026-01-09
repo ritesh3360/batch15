@@ -11,4 +11,8 @@ variable "vpc_id" {
   description = "VPC ID where security group exists"
   type        = string
   default     = "vpc-09f537271c999c3c7"
+<<<<<<< HEAD:terraform/variable.tf
 }
+=======
+}
+>>>>>>> 87e9cf55365f62953a797891a79a580b095cb56a:variable.tf
