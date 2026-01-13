@@ -12,5 +12,8 @@
     - name: print animal3
       debug:
         msg: "lion"
+      vars:
+        animal: "lion"
+
 
 
