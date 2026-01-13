@@ -4,6 +4,9 @@
     animal: "tiger" #global variable
   vars_files:
     - ./var.txt
+  vars_prompt:
+    - name: animal
+      prompt: enter the animal name
   tasks:
     - name: print animal
       debug:
@@ -13,11 +16,8 @@
         msg: "{{animal}}"
     - name: print animal3
       debug:
-        msg: "{{animal}}"
+        msg: "lion"
       vars:
         animal: "lion"
-
-
-
 
 
