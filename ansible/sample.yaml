@@ -4,19 +4,19 @@
     animal: "tiger" #global variable
   vars_files:
     - ./var.txt
-    - ./var2.txt
   tasks:
     - name: print animal
       debug:
         msg: "{{animal}}"
     - name: print animal2
       debug:
-        msg: "{{animal2}}"
+        msg: "{{animal}}"
     - name: print animal3
       debug:
         msg: "{{animal}}"
       vars:
         animal: "lion"
+
 
 
 
