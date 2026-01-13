@@ -7,6 +7,7 @@
   vars_prompt:
     - name: animal
       prompt: enter the animal name
+      private: false
   tasks:
     - name: print animal
       debug:
@@ -19,5 +20,6 @@
         msg: "lion"
       vars:
         animal: "lion"
+
 
 
