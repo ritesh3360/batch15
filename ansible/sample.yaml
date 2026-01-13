@@ -1,7 +1,7 @@
 - name: my first playbook
   hosts: all
   vars:
-    animal = "tiger" 
+    animal: "tiger" 
   tasks:
     - name: print animal
       debug:
@@ -12,4 +12,5 @@
     - name: print animal3
       debug:
         msg: "lion"
+
 
