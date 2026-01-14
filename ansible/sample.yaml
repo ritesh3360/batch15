@@ -17,7 +17,7 @@
         msg: "{{animal}}"
     - name: print animal3
       debug:
-        msg: "lion"
+        msg: "{{animal}}"
       vars:
         animal: "lion"
     - name: register value example
@@ -26,3 +26,4 @@
     - name: print hostname value from register
       debug:
         msg: "{{myhostvalue.stdout}}"
+
