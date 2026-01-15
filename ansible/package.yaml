@@ -1,17 +1,20 @@
-- name: install apache2
+- name: install apache
   hosts: all
   become: true
+  gather_facts: yes
+
   tasks:
-    - name: install httpd if os is redhat
+    - name: install apache on redhat
       yum:
         name: httpd
         state: latest
       when: ansible_os_family == "RedHat"
 
-    - name: install apache2 if os is debian
+    - name: install apache on debian
       apt:
         name: apache2
         state: latest
+        update_cache: yes
       when: ansible_os_family == "Debian"
 
   
