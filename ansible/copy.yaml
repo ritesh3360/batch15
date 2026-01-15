@@ -1,28 +1,29 @@
- - name: my web server
+- name: my web server
   hosts: all
+  become: true
   tasks:
+
     - name: install apache2
       package:
         name: apache2
         state: latest
       when: ansible_os_family == "Debian"
+
     - name: start apache2
       service:
         name: apache2
-        state: restarted
+        state: started
         enabled: true
-    - name: deployment
+      when: ansible_os_family == "Debian"
+
+    - name: copy index.html to web root
       copy:
         src: index.html
         dest: /var/www/html/index.html
+        mode: '0644'
+
     - name: add one line in index.html
       lineinfile:
         path: /var/www/html/index.html
-        regexp: '^<h1>'
-        line: "<h1> Hello here single line added</h1>"
-    - name: add one line in index.html
-      blockinfile:
-        path: /var/www/html/index.html
-        regexp: '^<h1>'
-        block: |
-          <h1> Hello here single line added</h1>
+        insertafter: "<body>"
+        line: "<h1>Hello here single line added</h1>"
