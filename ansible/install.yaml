@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 - name: install apache2
   hosts: all
   become: true
@@ -16,7 +15,6 @@
       when: ansible_os_family == "Debian"
 
   
-=======
 - name: install apache2
   hosts: all
   become: true
@@ -34,4 +32,4 @@
         state: latest
       when: ansible_os_family == "Debian"
 
->>>>>>> 00414a595b76872c39869fb6311863ace649cf3a
+
