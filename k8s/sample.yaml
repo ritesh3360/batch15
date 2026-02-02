@@ -1,11 +1,13 @@
-apiversion: v1
-kind: pod
+apiVersion: v1
+kind: Pod
 metadata:
   name: myhttp
-spc:
+spec:
   containers:
     - name: http
       image: httpd
       ports:
-       - name: http
-         containerport: 80
+        - name: http
+          containerPort: 80
+
+
