@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('pull') {
             steps {
+               git branch: 'main', url: 'https://github.com/ritesh3360/batch1.git'
                echo "pull success"
             }
         }
