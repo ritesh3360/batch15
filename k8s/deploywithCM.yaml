@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deploy
+  namespace: mywork
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: nginx
+        ports:
+        - containerPort: 80
+        env:
+        - name: USERNAME
+          valueFrom:
+            configMapKeyRef:
+              name: my-variables
+              key: username
+        - name: DEPARTMENT
+          valueFrom:
+            configMapKeyRef:
+              name: my-variables
+              key: department
